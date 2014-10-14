@@ -1,7 +1,21 @@
-<h2>States</h2>
 
-<p>Put your code here...</p>
+<% state_cities = [
+                    ["New York", "New York City", "Albany"],
+                    ["Connecticut", "Stamford", "Hartford", "Norwalk"],
+                    ["New Jersey", "Jersey City", "Trenton"]
+                  ] %>
 
-<h2>Cities</h2>
 
-<p>Put your code here...</p>
+<h2>Cities and States</h2>
+<p>
+  <ul>
+    <% state_cities.each do |element| %>
+      <h4><%= element.first %></h4>
+      <ul>
+      <% element.drop(1).each do |inner_element| %>
+        <li><%= inner_element %></li>
+      <% end %>
+      </ul>
+    <% end %>
+  </ul>
+</p>
